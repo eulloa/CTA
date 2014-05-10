@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dip" >
+    
+    <RelativeLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+        
+        <ImageView
+        android:id="@+id/trainPredictionsLine"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:src="@drawable/ic_launcher" />        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dip" >
+        
+	    <TextView
+	        android:id="@+id/trainPredictionsService"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Getting Service Header..."
+	        android:textSize="16sp" />
+	
+	    <TextView
+	        android:id="@+id/trainPredictionsTime"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Getting predictions..."
+	        android:textSize="16sp" />   
+	             
+    </LinearLayout>    
+
+</LinearLayout>
+
+
+
+
+<!--  
+<TextView
+        android:id="@+id/trainPredictionsService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/trainPredictionsLine"
+        android:layout_centerHorizontal="true"
+        android:text="Getting Service Header..."
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/trainPredictionsTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/trainPredictionsLine"
+        android:layout_alignLeft="@+id/trainPredictionsService"
+        android:layout_centerHorizontal="true"
+        android:text="Getting predictions..."
+        android:textSize="16sp" />
+-->

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EZ-CTA-Tracker</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_main">Choose a Route</string>
+    <string name="title_activity_route_directions">Choose a Direction</string>
+    <string name="title_activity_route_stops">Bus Stop</string>
+    <string name="title_activity_route_predictions">Predictions</string>
+    <string name="refresh">refresh</string>
+    <string name="back">New Search</string>
+    <string name="title_activity_train_directions">Choose a Direction</string>
+    <string name="title_activity_train_stops">Train Stop</string>
+    <string name="title_activity_train_predictions">Predictions</string>
+
+</resources>

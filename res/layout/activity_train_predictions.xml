@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TrainPredictions" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center" >
+        
+        <TextView
+            android:id="@+id/predictionTrainRouteInfo"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:text="Route Info"
+	        android:textStyle="bold"
+	        android:layout_centerHorizontal="true" />
+        
+        <TextView
+            android:id="@+id/predictionTrainStopName"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:text="Stop Name"
+	        android:textStyle="bold"
+	        android:layout_below="@+id/predictionTrainRouteInfo"
+	        android:layout_centerHorizontal="true" />
+        
+        <TextView
+            android:id="@+id/predictionTrainCurrentDate"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:text="Date"
+	        android:textStyle="bold"
+	        android:layout_below="@+id/predictionTrainStopName"
+	        android:layout_centerHorizontal="true" />
+        
+        <!--
+        <ImageButton 
+            android:id="@+id/predictionTrainFav"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/unfav"
+            android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginRight="10dip"
+	        android:background="@null"
+	        android:tag="unfav" /> -->
+        
+    </RelativeLayout>
+
+    <ListView
+        android:id="@+id/predictionsTrainsListView"
+        style="@style/ListView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

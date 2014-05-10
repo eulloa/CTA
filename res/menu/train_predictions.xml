@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/refreshTrainPredictions"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/refresh"
+        android:icon="@drawable/refresh"/>
+    
+    <item
+        android:id="@+id/backFromTrainPredictions"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/back"/>
+
+</menu>

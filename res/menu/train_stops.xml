@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/backFromTrainStops"
+        android:orderInCategory="100"
+        android:showAsAction="ifRoom"
+        android:title="@string/back"/>
+    
+    <item
+        android:id="@+id/train_stops_search"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="Search"
+        android:actionViewClass="android.widget.SearchView"
+        android:icon="@drawable/search" />
+
+</menu>
