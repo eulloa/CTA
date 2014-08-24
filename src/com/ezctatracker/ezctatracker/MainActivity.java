@@ -52,9 +52,11 @@ OnCheckedChangeListener, SearchView.OnQueryTextListener{
 	RadioGroup rdioGrp;
 	RadioButton buses;
 	RadioButton trains;
+	RadioButton myRoutes;
 	MyAdapter adapter;
 	SearchView searchView;	
 	ProgressDialog pDialog;
+	
 	private static final int PROGRESS_BAR_TYPE = 0;
 
 	@Override
