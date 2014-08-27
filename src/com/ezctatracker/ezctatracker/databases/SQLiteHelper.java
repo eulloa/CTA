@@ -1,4 +1,4 @@
-package com.ezctatracker.ezctatracker;
+package com.ezctatracker.ezctatracker.databases;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;

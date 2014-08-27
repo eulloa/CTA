@@ -1,4 +1,4 @@
-package com.ezctatracker.ezctatracker;
+package com.ezctatracker.ezctatracker.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
