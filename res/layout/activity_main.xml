@@ -32,6 +32,13 @@
 	            android:text="Trains"
 	            android:textSize="20sp" />
 	        
+	        <RadioButton
+	            android:id="@+id/rdioRoutes"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="My Routes"
+	            android:textSize="20sp" />
+	        
 	    </RadioGroup>
 	</LinearLayout>
 

@@ -105,11 +105,13 @@ public class TrainPredictions extends Activity{
 			String name;						
 			String l;
 			
+			Scanner s = null;
+			
 			try {
 				InputStream is = getAssets().open("stops.txt");
 				BufferedReader br = new BufferedReader(new InputStreamReader(is));
 				while ((l = br.readLine()) != null) {
-					Scanner s = new Scanner(l).useDelimiter("\\,");
+					s = new Scanner(l).useDelimiter("\\,");
 					while (s.hasNext()) {
 						parentId = s.next();
 						s.next();
@@ -123,7 +125,9 @@ public class TrainPredictions extends Activity{
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
-			}			
+			} finally {			
+				s.close();
+			}
 			return null;
 		}	
 	}

@@ -1,4 +1,4 @@
-package com.ezctatracker.ezctatracker;
+package com.ezctatracker.ezctatracker.models;
 
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -7,6 +7,7 @@ public class Route implements Parcelable {
 	private long id;
 	private String routeName;
 	private String routeType;
+	private boolean isFav;
 	
 	public void setId(long id) {
 		this.id = id;
@@ -30,6 +31,16 @@ public class Route implements Parcelable {
 	
 	public String getRouteType() {
 		return this.routeType;
+	}
+	
+	public boolean getIsFav()
+	{
+		return this.isFav;
+	}
+	
+	public void setIsFav(boolean isFav)
+	{
+		this.isFav = isFav;
 	}
 
 	@Override

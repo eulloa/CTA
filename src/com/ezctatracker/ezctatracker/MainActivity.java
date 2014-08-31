@@ -2,12 +2,10 @@ package com.ezctatracker.ezctatracker;
 
 
 import java.io.BufferedReader;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.StringReader;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +17,6 @@ import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -43,6 +40,8 @@ import android.widget.RadioGroup;
 import android.widget.SearchView;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.ezctatracker.ezctatracker.R;
 
 public class MainActivity extends Activity implements OnItemClickListener,
@@ -248,6 +247,8 @@ OnCheckedChangeListener, SearchView.OnQueryTextListener{
 		case R.id.rdioTrain:
 			getTrainLines();
 			break;
+		case R.id.rdioRoutes:
+			Toast.makeText(getApplicationContext(), "Routes", Toast.LENGTH_SHORT).show();
 		}
 	}
 	
