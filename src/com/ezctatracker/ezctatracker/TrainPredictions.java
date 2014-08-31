@@ -325,6 +325,11 @@ public class TrainPredictions extends Activity{
 			if (fav.getTag().toString().equals("unfav")) {
 				Toast.makeText(getApplicationContext(), "Route added to favorites", 
 						Toast.LENGTH_LONG).show();
+						
+				//make a new method findParentId based off FindParentID
+				//then construct a route object filling in necessary members
+				//to add that route to the DB
+				 
 				fav.setImageResource(R.drawable.fav);
 				fav.setTag("fav");
 			} else if (fav.getTag().toString().equals("fav")) {

@@ -5,9 +5,14 @@ import android.os.Parcelable;
 
 public class Route implements Parcelable {
 	private long id;
-	private String routeName;
-	private String routeType;
-	private boolean isFav;
+	private String name; 		//bus name or train line name (kimball - orange)
+	private String routeType;					//both
+	private String routeNumber; 				//bus
+	private String direction;					//bus
+	private String stopId;						//bus
+	private String stop;						//train
+	private String parentId;					//train
+	private boolean isFav;						//both
 	
 	public void setId(long id) {
 		this.id = id;
@@ -18,11 +23,11 @@ public class Route implements Parcelable {
 	}
 	
 	public void setRouteName(String name) {
-		this.routeName = name;
+		this.name = name;
 	}
 	
 	public String getRouteName() {
-		return this.routeName;
+		return this.name;
 	}
 	
 	public void setRouteType(String type) {
@@ -31,6 +36,56 @@ public class Route implements Parcelable {
 	
 	public String getRouteType() {
 		return this.routeType;
+	}
+	
+	public void setRouteNumber(String number)
+	{
+		this.routeNumber = number;
+	}
+	
+	public String getRouteNumber()
+	{
+		return this.routeNumber;
+	}
+	
+	public void setDirection(String direction)
+	{
+		this.direction = direction;
+	}
+	
+	public String getDirection()
+	{
+		return this.direction;
+	}
+	
+	public void setStopId(String id)
+	{
+		this.stopId = id;
+	}
+	
+	public String getStopId()
+	{
+		return this.stopId;
+	}
+	
+	public void setStop(String stop)
+	{
+		this.stop = stop;
+	}
+	
+	public String getStop()
+	{
+		return this.stop;
+	}
+	
+	public void setParentId(String id)
+	{
+		this.parentId = id;
+	}
+	
+	public String getParentId()
+	{
+		return this.parentId;
 	}
 	
 	public boolean getIsFav()
