@@ -33,27 +33,39 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import com.ezctatracker.ezctatracker.R;
+import android.widget.Toast;
 
-public class RoutePredictions extends Activity {
+import com.ezctatracker.ezctatracker.R;
+import com.ezctatracker.ezctatracker.models.Route;
+
+public class RoutePredictions extends Activity implements OnClickListener{
 	
 	ListView lv;
+	ImageButton fav;
 	TextView routeTV;
 	TextView stopName;
 	TextView currentDateTV;
 	ProgressDialog pDialog;
+	String key = "?key=mfZVaeUXL5HctzzxpFGyd5FNX";
+	String ctaCall = "http://www.ctabustracker.com/bustime/api/v1/getpredictions";
 	private static final int PROGRESS_BAR_TYPE = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_route_predictions);
+		
+		fav = (ImageButton)findViewById(R.id.predictionBusFav);
+		fav.setOnClickListener(this);
 		
 		new DownloadPredictions().execute();
 	}
@@ -88,8 +100,6 @@ public class RoutePredictions extends Activity {
 			String routeNumber = intent.getStringExtra("routeNumber");
 			String stopID = intent.getStringExtra("stopID");
 			
-			String key = "?key=mfZVaeUXL5HctzzxpFGyd5FNX";
-			String ctaCall = "http://www.ctabustracker.com/bustime/api/v1/getpredictions";
 			String url = ctaCall + key + "&rt=" + routeNumber + "&stpid=" + stopID + "&top=5";
 			String feed = getFeed(url);
 			return feed;
@@ -242,6 +252,49 @@ public class RoutePredictions extends Activity {
 		//item.setIcon(icon);
 	}
 	//--------------------- REFRESH MENU NOT CURRENTLY USED -----------------//
+
+	//---------------------- ADD ROUTE TO FAVORITES -------------------------//
+	@Override
+	public void onClick(View v) 
+	{
+		Intent intent = getIntent();
+		String name = intent.getStringExtra("routeName");
+		String routeNumber = intent.getStringExtra("routeNumber");
+		String stopId = intent.getStringExtra("stopID");
+		
+		switch (v.getId()) 
+		{
+			case R.id.predictionBusFav:
+				if (fav.getTag().toString().equals("unfav")) 
+				{		
+					Route busRoute = new Route();
+					{
+						busRoute.setIsFav(true);
+						busRoute.setName(name);
+						busRoute.setRouteNumber(routeNumber);
+						busRoute.setStopId(stopId);
+					};
+					
+					Toast.makeText(getApplicationContext(), "Added to your routes!", 
+							Toast.LENGTH_LONG).show();
+					
+					Toast.makeText(getApplicationContext(), busRoute.getName() + "\n" + busRoute.getRouteNumber() + "\n" + busRoute.getStopId(), Toast.LENGTH_LONG).show();
+					//to add that route to the DB
+					 
+					fav.setImageResource(R.drawable.fav);
+					fav.setTag("fav");
+				} 
+				
+				else if (fav.getTag().toString().equals("fav")) 
+				{
+					fav.setImageResource(R.drawable.unfav);
+					fav.setTag("unfav");
+				}
+				
+			break;
+		}
+	}
+	//---------------------------------------------------------------------------//
 	
 	public String getFeed(String url) {
 		StringBuilder builder = new StringBuilder();

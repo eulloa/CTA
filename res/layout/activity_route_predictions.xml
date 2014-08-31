@@ -5,40 +5,54 @@
     tools:context=".RoutePredictions"
     android:orientation="vertical" >
     
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:layout_gravity="center" >
         
         <TextView
             android:id="@+id/predictionRouteInfo"
-	        android:layout_width="match_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="18sp"
 	        android:text="Route Info"
-	        android:gravity="center"
-	        android:textStyle="bold" />
+	        android:textStyle="bold"
+        	android:layout_centerHorizontal="true" />
         
         <TextView
             android:id="@+id/predictionStopName"
-	        android:layout_width="match_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="18sp"
 	        android:text="Stop Name"
-	        android:gravity="center"
-	        android:textStyle="bold" />
+	        android:textStyle="bold" 
+	        android:layout_below="@+id/predictionRouteInfo"
+	        android:layout_centerHorizontal="true" />
         
         <TextView
             android:id="@+id/predictionCurrentDate"
-	        android:layout_width="match_parent"
+	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:textSize="18sp"
 	        android:text="Date"
-	        android:gravity="center"
-	        android:textStyle="bold" />
+	        android:textStyle="bold" 
+	        android:layout_below="@+id/predictionStopName"
+	        android:layout_centerHorizontal="true" />
         
-    </LinearLayout>   
+        
+        <ImageButton 
+            android:id="@+id/predictionBusFav"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:src="@drawable/unfav"
+            android:layout_alignParentRight="true"
+	        android:layout_alignParentTop="true"
+	        android:layout_marginRight="10dip"
+	        android:background="@null"
+	        android:tag="unfav" />
+        
+    </RelativeLayout>   
 
     <ListView
         android:id="@+id/predictionsListView"

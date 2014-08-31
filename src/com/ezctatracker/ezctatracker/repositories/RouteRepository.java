@@ -90,7 +90,7 @@ public class RouteRepository
 	{
 		Route route = new Route();
 		route.setId(cursor.getLong(0));				//based on column headers, 
-		route.setRouteName(cursor.getString(1));    //0, 1, 2, etc...
+		route.setName(cursor.getString(1));    //0, 1, 2, etc...
 		route.setRouteType(cursor.getString(2));
 		
 		return route;

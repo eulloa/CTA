@@ -40,7 +40,6 @@
 	        android:layout_below="@+id/predictionTrainStopName"
 	        android:layout_centerHorizontal="true" />
         
-        <!--
         <ImageButton 
             android:id="@+id/predictionTrainFav"
             android:layout_width="40dip"
@@ -50,7 +49,7 @@
 	        android:layout_alignParentTop="true"
 	        android:layout_marginRight="10dip"
 	        android:background="@null"
-	        android:tag="unfav" /> -->
+	        android:tag="unfav" />
         
     </RelativeLayout>
 

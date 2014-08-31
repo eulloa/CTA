@@ -45,10 +45,10 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class TrainPredictions extends Activity{
+public class TrainPredictions extends Activity implements OnClickListener{
 	
 	ListView lv;
-	//ImageButton fav;
+	ImageButton fav;
 	ImageView line;
 	TextView routeInfo;
 	TextView stopName; 
@@ -61,8 +61,8 @@ public class TrainPredictions extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_train_predictions);
 		
-		/*fav = (ImageButton)findViewById(R.id.predictionTrainFav);
-		fav.setOnClickListener(this);*/
+		fav = (ImageButton)findViewById(R.id.predictionTrainFav);
+		fav.setOnClickListener(this);
 		
 		line = (ImageView)findViewById(R.id.trainPredictionsLine);
 		
@@ -317,28 +317,35 @@ public class TrainPredictions extends Activity{
 	}	
 	//--------------------- REFRESH MENU NOT CURRENTLY USED -----------------//
 
-	/*
+	
 	@Override
-	public void onClick(View v) {
-		switch (v.getId()) {
-		case R.id.predictionTrainFav:
-			if (fav.getTag().toString().equals("unfav")) {
-				Toast.makeText(getApplicationContext(), "Route added to favorites", 
-						Toast.LENGTH_LONG).show();
-						
-				//make a new method findParentId based off FindParentID
-				//then construct a route object filling in necessary members
-				//to add that route to the DB
-				 
-				fav.setImageResource(R.drawable.fav);
-				fav.setTag("fav");
-			} else if (fav.getTag().toString().equals("fav")) {
-				fav.setImageResource(R.drawable.unfav);
-				fav.setTag("unfav");
-			}
+	public void onClick(View v) 
+	{
+		switch (v.getId()) 
+		{
+			case R.id.predictionTrainFav:
+				if (fav.getTag().toString().equals("unfav")) 
+				{
+					Toast.makeText(getApplicationContext(), "Train Route added to favorites", 
+							Toast.LENGTH_LONG).show();
+							
+					//make a new method findParentId based off FindParentID
+					//then construct a route object filling in necessary members
+					//to add that route to the DB
+					 
+					fav.setImageResource(R.drawable.fav);
+					fav.setTag("fav");
+				} 
+				
+				else if (fav.getTag().toString().equals("fav")) 
+				{
+					fav.setImageResource(R.drawable.unfav);
+					fav.setTag("unfav");
+				}
+				
 			break;
 		}
-	}*/
+	}
 	
 	//-------------------- DATE & TIME FORMAT METHODS ------------------//
 	public String getDay(int day) {

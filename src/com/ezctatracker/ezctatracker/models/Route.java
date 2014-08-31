@@ -22,11 +22,11 @@ public class Route implements Parcelable {
 		return this.id;
 	}
 	
-	public void setRouteName(String name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 	
-	public String getRouteName() {
+	public String getName() {
 		return this.name;
 	}
 	
